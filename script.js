@@ -10,9 +10,16 @@ function kodovaciFunkce(Vstup) {
         '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', ' ': '/'
     };
 
-    return Vstup.toLowerCase().split('').map(char => morseCodeMap[char] || '').join(' ');
+    // Remove diacritics and convert to lowercase
+    const normalizedInput = Vstup.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+    return normalizedInput
+        .split('')
+        .map(char => morseCodeMap[char] || '')
+        .filter(code => code !== '') // Remove empty translations
+        .join('|'); // Add vertical line after each letter
 }
 
-textAreaVstup.onkeydown = function () {
+textAreaVstup.addEventListener("input", function () {
     textAreaVystup.value = kodovaciFunkce(textAreaVstup.value);
-}
+});
