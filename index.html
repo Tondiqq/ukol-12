@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"
+    <title>Moryeovka</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background-color: #001f3f; /* Dark blue */
+            color: #ffffff; /* White text */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0074D9; /* Bright blue */
+        }
+        textarea {
+            background-color: #001f3f; /* Dark blue */
+            color: #ffffff; /* White text */
+        }
+        textarea::placeholder {
+            color: #7FDBFF; /* Light blue */
+        }
+    </style>
 </head>
 <body>
     <header><h1>Moryeovka</h1></header>
     <main class="w3-container">
-        <textarea class="w3-input w3-border" rows="5" placeholder="Kódovaný text" id="Vstup"></textarea>
-        <textarea class="w3-input w3-border w3-margin-top" rows="5" readonly placeholder="Kód" id="Vystup"></textarea>
+        <textarea class="w3-input w3-border w3-round" rows="5" placeholder="Kódovaný text" id="Vstup"></textarea>
+        <textarea class="w3-input w3-border w3-round w3-margin-top" rows="5" readonly placeholder="Kód" id="Vystup"></textarea>
     </main>
     <script src="script.js"></script>
 </body>
